@@ -1,0 +1,350 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+p, span, h1,h2,p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+.container {
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+
+.bg-overlay{
+  position:fixed;
+   inset:0;                      
+  background:linear-gradient(                   
+    to bottom,
+    rgba(255,255,255,.75),
+    rgba(255,255,255,.6)
+  );
+  pointer-events:none;                          
+  z-index:0;                                     
+}
+
+body {
+    background:center/cover no-repeat fixed url('./images/skysky.jpg');
+
+}
+
+header, main, footer {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+main > section {
+    padding-top: 20px;
+}
+
+/* HEADER */
+header > .container {
+  display:flex;                                  
+  justify-content:space-between;                      
+  align-items:center;                           
+  backdrop-filter:blur(6px);                    
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+    
+
+    @media screen and (max-width: 767px) {
+        font-size: 20px;
+
+        > img {
+            height: 40px;
+        }
+    }
+}
+
+
+.btn-list{
+  display:flex;
+   gap:10px;                        
+}
+
+.nav-btn{
+  display:inline-block;                          
+  padding:12px 20px;                              
+  border-radius:999px;                         
+  border:none;                                   
+  background: rgba(255,255,255,.55);                      
+  backdrop-filter:blur(6px);                     
+  box-shadow:0 10px 30px rgba(0,0,0,.15);                    
+  cursor:pointer;                                
+}
+
+.nav-btn.active{ outline:2px solid orange  } 
+
+
+/* SEARCH FORM  */
+
+.form-container{
+    width: 100%;
+  display:flex; 
+  gap:8px;
+   align-items:center;      
+  background: rgba(255,255,255,.55);                               
+  padding:6px;
+   border-radius: 18px;                   
+  box-shadow:0 10px 30px rgba(0,0,0,.15); 
+  backdrop-filter:blur(8px);    
+  max-width:560px;  
+  margin-left: auto;
+  margin-right: auto;  
+  margin-bottom: 20px;                       
+}
+
+.form-container input{
+  border:none;
+   background:transparent;                   
+  padding:10px 12px; 
+  min-width:260px;                     
+  font-size:16px;
+   outline:none;                          
+  flex:1;                                                
+}
+
+.form-container button{
+  border:none; background:transparent;                    
+  padding:8px 10px; cursor:pointer; font-size:18px;       
+}
+
+/* CITY */
+
+h1 {
+    text-align: center;
+    font-weight: 900;
+}
+
+.city-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.city-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255,255,255,.55);
+    border: 1px solid grey;
+    border-radius: 16px;
+    padding: 8px 12px;
+}
+
+.city-info-btn-list {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+
+.city-info-btn-list > button {
+    background-color: transparent;
+    font-size: 24px;
+    border: 1px solid black;
+    border-radius: 12px;
+    transition: 250ms linear;
+}
+
+.city-info-btn-list > button:hover {
+    transform: scale(1.2);
+}
+
+
+
+.temp-info {
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+
+}
+
+
+
+.temp-info > img {
+    width: 100px;
+    height: 100px;
+}
+
+.temp-info > p {
+    font-size : 30px;
+}
+
+.time-container {
+    padding: 50px;
+    border-radius: 12px;
+    background-color: rgba(155,155,155,0.2);
+    display: flex;
+    flex-direction: column;
+    font-size: 26px;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255,255,255,.55);
+    margin-top: 12px;
+
+}
+
+/* 7 days weather */
+
+.more-info-container {
+    margin-top: 12px;
+}
+
+.more-info-container > h2 {
+    text-align: center;
+}
+
+
+
+.week-list-subtitle {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.forecast-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+
+}
+
+.day-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 12px;
+    padding: 8px 12px;
+    background-color: rgba(255,255,255,.55);
+
+    
+}
+
+.day-card > img {
+    width: 60px;
+    height: 60px;
+}
+
+
+/* LOADER  */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid grey;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+
+
+/* FAVORITES LIST  */
+
+.favorites-list {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    row-gap: 8px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.favorites-list > li {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid grey;
+    border-radius: 12px;
+    background-color: rgba(255,255,255,.3);
+}
+.favorites-list > li > p {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.delete-btn {
+    border : none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 250ms linear;
+}
+
+.delete-btn:hover {
+    transform: scale(1.4);
+}
+
+.title-info {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.error {
+    color: red;
+    font-size: 24px;
+    text-align: center;
+}
+
+.empty-list {
+    text-align: center;
+}
